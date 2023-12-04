@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDao" class="com.powernode.spring6.dao.UserDao"/>
+    <bean id="vipDao" class="com.powernode.spring6.dao.VipDao"/>
+    <bean id="csBean" class="com.powernode.spring6.service.CustomerService">
+        <!-- 构造注入,指定第一个参数，下标为0-->
+        <constructor-arg index="0" ref="userDao"></constructor-arg>
+        <!-- 构造注入,指定第二个参数，下标为1-->
+        <constructor-arg index="1" ref="vipDao"></constructor-arg>
+    </bean>
+</beans>

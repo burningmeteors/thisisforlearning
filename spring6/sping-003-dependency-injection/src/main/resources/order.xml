@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userBean" class="com.powernode.spring6.dao.User">
+        <!-- 注入简单类型，赋值使用value,而不是ref       -->
+        <property name="name" value="李白"></property>
+        <property name="password" value="huatao,2015"></property>
+        <property name="age" value="22"></property>
+    </bean>
+
+
+    <!--声明外部bean-->
+    <bean id="orderBean" class="com.powernode.spring6.dao.OrderDao"></bean>
+    <bean id="orderServiceBean" class="com.powernode.spring6.service.OrderService">
+        <!--使用ref属性来引入，这就是注入外部bean-->
+        <property name="orderDao" ref="orderBean"></property>
+    </bean>
+
+
+    <bean id="svt" class="com.powernode.spring6.bean.SimpleTypeValue">
+        <property name="age" value="18"/>
+        <property name="age2" value="22"/>
+        <property name="c" value="g"/>
+        <property name="c2" value="y"/>
+        <property name="flag" value="true"/>
+        <property name="flag2" value="false"/>
+        <property name="username" value="helloWorld"/>
+        <property name="classz" value="java.lang.String"/>
+        <property name="season" value="SPRING"/>
+        <property name="birthday" value="2000/1/11"/>
+    </bean>
+</beans>

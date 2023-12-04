@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="stu" class="com.powernode.spring6.bean.Student">
+        <property name="name" value="李白"/>
+        <!--    1.级联属性赋值必须按照以下顺序，不能颠倒
+                2.clazz属性必须有getter方法
+        -->
+        <property name="clazz" ref="cla"/>
+        <property name="clazz.name" value="高三一班"/>
+    </bean>
+    <bean id="cla" class="com.powernode.spring6.bean.Clazz">
+
+    </bean>
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--这就是spring的配置文件-->
+<!-- 这个文件最好是放在类路径中，方便后期移植-->
+<!--    配置bean -->
+<!--    id:是这个bean的身份证号码，不能重复
+        class:全限定名称（带包名）
+-->
+
+    <bean id="vipbean" class="com.powernode.spring6.bean.VIP" />
+</beans>
